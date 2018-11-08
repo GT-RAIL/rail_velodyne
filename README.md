@@ -1,22 +1,19 @@
-[![Build Status](https://travis-ci.org/ros-drivers/velodyne.svg?branch=master)](https://travis-ci.org/ros-drivers/velodyne)
-
-Overview
+RAIL Velodyne ~ under construction!!!
 ========
 
-Velodyne<sup>1</sup> is a collection of ROS<sup>2</sup> packages supporting `Velodyne high
-definition 3D LIDARs`<sup>3</sup>.
+This rail_velodyne repository includes custom packages required to install, simulate, and use the Velodyne VLP-16 with the Fetch. The drivers which bring up the physical VLP-16 were forked from [here](https://github.com/ros-drivers/velodyne) while the customized launch files to start the Fetch simluations that include the VLP-16 reuse models from [here](https://bitbucket.org/DataspeedInc/velodyne_simulator).
 
-**Warning**:
+# Dependencies
+Fetch packages for simulation. Please see [their site](http://docs.fetchrobotics.com/index.html) for installation instructions.
 
-  The master branch normally contains code being tested for the next
-  ROS release.  It will not always work with every previous release.
-  To check out the source for the most recent release, check out the
-  tag `velodyne-<version>` with the highest version number.
+# Install the package
 
-The current ``master`` branch works with ROS Indigo and Kinetic.
-CI builds are currently run for Lunar and Melodic but extensive
-testing has not been completed in those environments.
+1. Begin by installing the Gazebo simulation packages for the VLP-16: `sudo apt-get install ros-indigo-velodyne-simulator`
+2. Next clone this repo into a catkin workspace you intend to use.
+3. Run `catkin_make` in the catkin workspace to build the pacakges and remember to source the `setup.bash` in the `devel` folder.
 
-- <sup>1</sup>ROS: http://www.ros.org
-- <sup>2</sup>Velodyne: http://www.ros.org/wiki/velodyne
-- <sup>3</sup>`Velodyne high definition 3D LIDARs`: http://www.velodynelidar.com/lidar/lidar.aspx
+# Install the VLP-16 to Fetch
+
+
+
+# Verify Install
