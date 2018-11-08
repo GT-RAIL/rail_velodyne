@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>fetch_velodyne</name>
+  <version>0.0.0</version>
+  <description>
+    Meta-package integrating Velodyne VLP-16 drivers and simulation on Fetch
+  </description>
+  <maintainer email="adaruna3@gatech.edu">Angel Andres Daruna</maintainer>
+  <author>Angel Andres Daruna</author>
+  <license>To Do</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>velodyne</exec_depend>
+
+  <export>
+    
+  </export>
+</package>
