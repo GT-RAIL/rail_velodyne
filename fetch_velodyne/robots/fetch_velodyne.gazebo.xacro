@@ -2,7 +2,7 @@
   <xacro:arg name="gpu" default="true"/>
   <xacro:property name="gpu" value="$(arg gpu)" />
 
-  <xacro:include filename="$(find fetch_description)/robots/fetch.urdf" />
+  <xacro:include filename="$(find fetch_velodyne)/robots/fetch_velodyne.urdf" />
 
   <!-- Base is modeled as a big tub sitting on floor, with two wheels -->
   <gazebo reference="base_link">
@@ -141,40 +141,12 @@
     </sensor>
   </gazebo>
   
-  <!-- Velodyne VLP-16 Mount -->
-  <link name="head_velo_mount_link">
-    <inertial> <!-- calculated via SolidWorks output -->
-      <origin rpy="0 0 0" xyz="0 0 0.0437" />
-      <mass value="0.166" />
-      <inertia ixx="0.0002" ixy="0.0" ixz="0.0" iyy="0.0002" iyz="0.0" izz="0.0002" />
-    </inertial>
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.0275" />
-      <geometry> <!-- mesh to be added... -->
-        <cylinder length="0.055" radius="0.0515"/>
-      </geometry>
-      <material name="grey">
-        <color rgba="0.3 0.3 0.3 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.0275" />
-      <geometry> <!-- mesh to be added... -->
-        <cylinder length="0.055" radius="0.0515"/>
-      </geometry>
-    </collision>
-  </link> 
-  <joint name="head_velo_mount_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.046065 0.000065 0.08235" />
-    <parent link="head_pan_link" />
-    <child link="head_velo_mount_link" />
-  </joint>
   <!-- Velodyne VLP-16 -->
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-  <VLP-16 parent="head_velo_mount_link" name="velodyne" topic="/velodyne_points" hz="10" samples="440" >
-    <origin xyz="0 0 0.055" rpy="0 0 0" />
+  <VLP-16 parent="velodyne_mount_link" name="velodyne" topic="/velodyne/depth/points" hz="10" samples="440" >
+    <origin xyz="0 0 0" rpy="0 0 0" />
   </VLP-16>
-  <gazebo reference="head_velo_mount_link">
+  <gazebo reference="velodyne_mount_link">
     <material>Gazebo/Grey</material>
   </gazebo>
 
