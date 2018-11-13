@@ -142,11 +142,11 @@
   </gazebo>
   
   <!-- Velodyne VLP-16 -->
-  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-  <VLP-16 parent="velodyne_mount_link" name="velodyne" topic="/velodyne/depth/points" hz="10" samples="440" >
+  <xacro:include filename="$(find fetch_velodyne)/sensors/VLP-16.urdf.xacro"/>
+  <VLP-16 parent="velodyne_base_link" name="velodyne_link" topic="/velodyne/depth/points" hz="10" samples="440" >
     <origin xyz="0 0 0" rpy="0 0 0" />
   </VLP-16>
-  <gazebo reference="velodyne_mount_link">
+  <gazebo reference="velodyne_base_link">
     <material>Gazebo/Grey</material>
   </gazebo>
 
