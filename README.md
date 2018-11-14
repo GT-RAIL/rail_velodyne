@@ -6,10 +6,16 @@ This rail_velodyne repository includes custom packages required to install, simu
 Fetch packages for simulation. Please see [their site](http://docs.fetchrobotics.com/index.html) for installation instructions.
 
 ## Menu
-1. [Fetch with Velodyne in Simulation](#fetch-with-velodyne-in-simulation) Go here for simulation install.
-2. [Fetch with Velodyne on physical hardware](#fetch-with-velodyne-on-physical-hardware) Go here for robot install.
-3. [Toggle the Velodyne on the Fetch](#toggle-the-velodyne-on-the-fetch) Go here to enable/disable Velodyne on robot.
+1. [3D printed Mounts](#3d-printed-mounts) Go here to view the mounts for the VLP-16 and battery on Fetch.
+2. [Fetch with Velodyne in Simulation](#fetch-with-velodyne-in-simulation) Go here for simulation install.
+3. [Fetch with Velodyne on physical hardware](#fetch-with-velodyne-on-physical-hardware) Go here for robot install.
+4. [Toggle the Velodyne on the Fetch](#toggle-the-velodyne-on-the-fetch) Go here to enable/disable Velodyne on robot.
 
+## 3D printed Mounts
+Mounts for VLP-16 and battery are found in [here](https://github.com/adaruna3/rail_velodyne/tree/master/fetch_velodyne/hardware). Some images of these mounts are below:
+
+<img src="./fetch_velodyne/hardware/vlp16_pan.jpg" alt="drawing" width="200"/>
+<img src="./fetch_velodyne/hardware/battery_mount.jpg" alt="drawing" width="200"/>
 
 ## Fetch with Velodyne in Simulation
 This goes through the process of installing and running the simulations for Fetch including the VLP-16.
